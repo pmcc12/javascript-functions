@@ -1,4 +1,6 @@
-function seed() {}
+function seed(a,b,c) {
+  return [arguments[0],arguments[1],arguments[2]];
+}
 
 function same([x, y], [j, k]) {}
 
@@ -49,10 +51,10 @@ const startPatterns = {
       [2, 2]
     ]
   };
-  
+
   const [pattern, iterations] = process.argv.slice(2);
   const runAsScript = require.main === module;
-  
+
   if (runAsScript) {
     if (startPatterns[pattern] && !isNaN(parseInt(iterations))) {
       main(pattern, parseInt(iterations));
@@ -60,7 +62,7 @@ const startPatterns = {
       console.log("Usage: node js/gameoflife.js rpentomino 50");
     }
   }
-  
+
   exports.seed = seed;
   exports.same = same;
   exports.contains = contains;
