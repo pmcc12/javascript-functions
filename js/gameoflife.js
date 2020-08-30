@@ -1,5 +1,9 @@
 function seed(a,b,c) {
-  return [arguments[0],arguments[1],arguments[2]];
+  array_seed=[];
+  for(let i=0; i<arguments.length;i++){
+    array_seed[i]=arguments[i];
+  }
+  return array_seed;
 }
 
 function same([x, y], [j, k]) {}
